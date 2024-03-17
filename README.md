@@ -16,4 +16,3 @@ This is my personal portfolio project, built with React. It showcases my skills,
 git clone https://github.com/yourgithubusername/portfolio
 cd portfolio
 ```
-# Some shit
