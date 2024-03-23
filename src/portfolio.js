@@ -1,7 +1,7 @@
 const header = {
   // all the properties are optional - can be left empty or deleted
-  homepage: 'https://rajshekhar26.github.io/cleanfolio',
-  title: 'JS.',
+  homepage: 'https://github.com/ToTTToR/Portfolio',
+  title: 'VAM.',
 }
 
 const about = {
@@ -49,23 +49,20 @@ const projects = [
 const skills = [
   // skills can be added or removed
   // if there are no skills, Skills section won't show up
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'TypeScript',
+  'Python',
   'React',
-  'Redux',
-  'SASS',
-  'Material UI',
-  'Git',
-  'CI/CD',
-  'Jest',
-  'Enzyme',
+  '.NET',
+  'SQL',
+  'Docker',
+  'C#',
+  'Azure',
+  'Java',
+  'Kali Linux',
 ]
 
 const contact = {
   // email is optional - if left empty Contact section won't show up
-  email: 'johnsmith@mail.com',
+  email: 'vikinor007@gmail.com',
 }
 
 export { header, about, projects, skills, contact }
