@@ -14,5 +14,3 @@ steps:
       - 'managed'
       - '--region'
       - 'europe-north1'
-options:
-  logging: CLOUD_LOGGING_ONLY
