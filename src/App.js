@@ -8,7 +8,6 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import ProfilePic from './components/ProfilePic/ProfilePic'
-import Sidebar from './components/Sidebar/Sidebar'
 import './App.css'
 
 const App = () => {
@@ -19,7 +18,6 @@ const App = () => {
       <Header />
 
       <main>
-        <Sidebar />
         <ProfilePic />
         <About />
         <Projects />

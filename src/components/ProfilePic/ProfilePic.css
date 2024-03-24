@@ -1,0 +1,22 @@
+.profile-pic {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .profile-pic:hover {
+    animation: spin 1.5s ease-out;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @media (max-width: 600px) {
+    .profile-pic {
+      width: 150px; /* increased size */
+      height: 150px; /* increased size */
+    }
+  }
