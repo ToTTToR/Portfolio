@@ -22,7 +22,7 @@ const Navbar = () => {
         {projects.length ? (
           <li className='nav__list-item'>
             <a
-              href='#projects'
+              href='/#projects'
               onClick={toggleNavList}
               className='link link--nav'
             >
@@ -34,7 +34,7 @@ const Navbar = () => {
         {skills.length ? (
           <li className='nav__list-item'>
             <a
-              href='#skills'
+              href='/#skills'
               onClick={toggleNavList}
               className='link link--nav'
             >
@@ -46,7 +46,7 @@ const Navbar = () => {
         {contact.email ? (
           <li className='nav__list-item'>
             <a
-              href='#contact'
+              href='/#contact'
               onClick={toggleNavList}
               className='link link--nav'
             >
@@ -54,6 +54,16 @@ const Navbar = () => {
             </a>
           </li>
         ) : null}
+
+        <li className='nav__list-item'>
+          <a
+            href='/bingus-or-floppa'
+            onClick={toggleNavList}
+            className='link link--nav'
+          >
+            Bingus/Floppa?
+          </a>
+        </li>
       </ul>
 
       <button

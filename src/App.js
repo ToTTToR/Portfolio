@@ -33,16 +33,11 @@ const App = () => {
       <Header />
 
       <main>
-        <ProfilePic />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
+        <Routes>
+          <Route path='/' element={<MainPage />} />
+          <Route path='/bingus-or-floppa' element={<BingusOrFloppa />} />
+        </Routes>
       </main>
-
-      <Routes>
-        <Route path='/bingus-or-floppa' element={<BingusOrFloppa />} />
-      </Routes>
 
       <ScrollToTop />
       <Footer />

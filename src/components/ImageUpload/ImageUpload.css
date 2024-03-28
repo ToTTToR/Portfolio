@@ -1,0 +1,64 @@
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  margin: 5vw; /* Add a margin of 5% of the viewport width */
+}
+
+.upload-label {
+  cursor: pointer;
+}
+
+button {
+  font-family: inherit;
+  font-size: 20px; /* Adjust as needed */
+  padding: 10px 20px; /* Adjust as needed */
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1); /* Adjust as needed */
+}
+
+.upload-icon {
+  color: var(--clr-fg-alt); /* Use the light theme color by default */
+  transition: transform 0.3s ease;
+}
+
+.upload-icon:hover {
+  transform: scale(1.2); 
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #09f;
+  animation: spin 1s linear infinite;
+}
+
+.uploaded-image, .result-image {
+  max-width: 35vw;
+  max-height: 30vh;
+  height: auto;
+  object-fit: contain;
+  margin-top: 0%;
+  margin-bottom: 20px;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+@media (min-width: 768px) {
+  .uploaded-image, .result-image {
+    max-height: 50vh;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

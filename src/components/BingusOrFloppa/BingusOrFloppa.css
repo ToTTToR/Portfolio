@@ -1,0 +1,24 @@
+.centered-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* This will align the items at the start of the container (top) */
+    height: 100vh; /* This will make the div take the full height of the viewport */
+    flex-direction: column; /* This will stack the items vertically */
+    padding-top: 20px; /* This will add some space at the top */
+    padding-bottom: 20px; /* This will add some space at the bottom */
+}
+  
+.centered-div h1 {
+  margin-bottom: 20px; /* This will add 20px of space below the h1 element */
+}
+
+/* Styles for screens with a max width of 600px (typical breakpoint for mobile devices) */
+@media screen and (max-width: 600px) {
+  .centered-div {
+      padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  .centered-div h1 h2 {
+      font-size: 23px; /* Reduce font size on smaller screens */
+  }
+}
