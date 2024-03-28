@@ -8,7 +8,7 @@ const BingusOrFloppa = () => {
 return (
     <div>
         <div className="centered-div">
-            <h1>Are you Bingus or Floppa?</h1>
+            <h1>Are you <span className="bingus">Bingus</span> or <span className="floppa">Floppa</span>?</h1>
             <h2>Upload a picture of yourself and I will tell you!</h2>
             <ImageUpload />
         </div>

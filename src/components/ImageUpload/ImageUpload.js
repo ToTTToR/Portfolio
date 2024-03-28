@@ -66,7 +66,7 @@ const ImageUpload = () => {
         <>
           {imageUrl ? (
             <>
-              <img src={imageUrl} alt="Uploaded" className="uploaded-image" style={{maxWidth: '100%', maxHeight: '500px'}} />
+              <img src={imageUrl} alt="Uploaded" className="uploaded-image" />
               <label className="upload-label" htmlFor="file-upload">
                 <input id="file-upload" type="file" onChange={onFileChange} style={{ display: 'none' }} />
                 Choose another file

@@ -41,19 +41,22 @@ button:hover {
 }
 
 .uploaded-image, .result-image {
-  max-width: 35vw;
-  max-height: 30vh;
-  height: auto;
-  object-fit: contain;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
   margin-top: 0%;
   margin-bottom: 20px;
   margin-right: 10%;
   margin-left: 10%;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 600px) {
   .uploaded-image, .result-image {
-    max-height: 50vh;
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
