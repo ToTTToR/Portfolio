@@ -4,7 +4,9 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  margin: 5vw; /* Add a margin of 5% of the viewport width */
+  margin: 2vw;
+  width: 60vw; /* Adjust as needed */
+  height: 60vh; /* Adjust as needed */
 }
 
 .upload-label {
@@ -40,28 +42,66 @@ button:hover {
   animation: spin 1s linear infinite;
 }
 
+.result-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px; /* Adjust as needed */
+  height: auto;
+  margin: 0 auto;
+}
+
 .uploaded-image, .result-image {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
+  max-width: 400px;
+  object-fit: over;
+  transition: opacity 2s;
   border-radius: 15px;
-  margin-top: 0%;
-  margin-bottom: 20px;
-  margin-right: 10%;
-  margin-left: 10%;
 }
 
 @media (max-width: 600px) {
+  .result-container {
+    max-width: 200px; /* Adjust as needed */
+  }
   .uploaded-image, .result-image {
-    width: 100%;
-    height: auto;
+    width: auto;
+    max-height: 250px;
     margin-right: 0;
     margin-left: 0;
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.result-image {
+  animation: fadeIn 2s;
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.bingus, .floppa {
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 3s linear infinite;
+}
+
+.bingus {
+  background-image: linear-gradient(270deg, pink, purple, pink);
+}
+
+.floppa {
+  background-image: linear-gradient(270deg, yellow, orange, yellow);
 }

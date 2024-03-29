@@ -2,7 +2,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center; /* This will align the items at the start of the container (top) */
-    height: 100vh; /* This will make the div take the full height of the viewport */
     flex-direction: column; /* This will stack the items vertically */
     padding-top: 20px; /* This will add some space at the top */
     padding-bottom: 20px; /* This will add some space at the bottom */

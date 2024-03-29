@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Confetti from 'react-dom-confetti';
 import axios from 'axios';
 import { MdFileUpload } from 'react-icons/md';
 import { toast } from 'react-toastify';
@@ -7,11 +8,26 @@ import './ImageUpload.css';
 
 toast.configure();
 
+const config = {
+  angle: 90,
+  spread: 360,
+  startVelocity: 20,
+  elementCount: 70,
+  dragFriction: 0.12,
+  duration: 3000,
+  stagger: 3,
+  width: "10px",
+  height: "10px",
+  perspective: "500px",
+  colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+};
+
 const ImageUpload = () => {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState(null);
   const [result, setResult] = useState(null);
+  const [showResult, setShowResult] = useState(false);
   const [error, setError] = useState(null);
 
   const onFileChange = (e) => {
@@ -33,6 +49,7 @@ const ImageUpload = () => {
       const { prediction } = data;
       if (prediction === 'Floppa' || prediction === 'Bingus') {
         setResult(prediction);
+        setShowResult(true);
       } else {
         throw new Error('Invalid response from server');
       }
@@ -49,17 +66,19 @@ const ImageUpload = () => {
     setImageUrl(null);
     setResult(null);
     setError(null);
+    setShowResult(false);
   }
 
   return (
     <div className="upload-container">
       {result ? (
         <>
+          <Confetti active={ showResult } config={ config } />
           <div className="result-container">
-            <img src={imageUrl} alt="Uploaded" className="uploaded-image" />
-            <img src={`/images/${result}.jpg`} alt={result} className="result-image" />
+            {!showResult && <img src={imageUrl} alt="Uploaded" className="uploaded-image" />}
+            {showResult && <img src={`/images/${result}.jpg`} alt="Result" className="result-image" />}
           </div>
-          <h2>Congratulations! You are a {result}!</h2>
+          <h2>Congratulations! You are a <span className={result==='Floppa'?'floppa':'bingus'}>{result}!</span></h2>
           <button type="button" onClick={reset}>Try again</button>
         </>
       ) : (
@@ -67,10 +86,12 @@ const ImageUpload = () => {
           {imageUrl ? (
             <>
               <img src={imageUrl} alt="Uploaded" className="uploaded-image" />
-              <label className="upload-label" htmlFor="file-upload">
-                <input id="file-upload" type="file" onChange={onFileChange} style={{ display: 'none' }} />
-                Choose another file
-              </label>
+              {!loading && (
+                <label className="upload-label" htmlFor="file-upload">
+                  <input id="file-upload" type="file" onChange={onFileChange} style={{ display: 'none' }} />
+                  Choose another file
+                </label>
+              )}
             </>
           ) : (
             <label className="upload-label" htmlFor="file-upload">
@@ -78,12 +99,13 @@ const ImageUpload = () => {
               <MdFileUpload size={100} className="upload-icon" />
             </label>
           )}
-          <button type="button" onClick={onFileUpload} disabled={!file || loading}>
-            {loading ? <div className="spinner" /> : 'Upload'}
-          </button>
+          {file && (
+            <button type="button" onClick={onFileUpload} disabled={!file || loading}>
+              {loading ? <div className="spinner" /> : 'Upload'}
+            </button>
+          )}
         </>
       )}
-      {error && <p>{error}</p>}
     </div>
   );
 }
