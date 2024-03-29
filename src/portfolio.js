@@ -65,4 +65,8 @@ const contact = {
   email: 'vikinor007@gmail.com',
 }
 
-export { header, about, projects, skills, contact }
+const api = {
+  bingusorfloppa: 'https://bingusorfloppa-utv4yl2rlq-lz.a.run.app/predict', 
+}
+
+export { header, about, projects, skills, contact , api}

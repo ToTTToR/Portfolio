@@ -3,6 +3,7 @@ import Confetti from 'react-dom-confetti';
 import axios from 'axios';
 import { MdFileUpload } from 'react-icons/md';
 import { toast } from 'react-toastify';
+import {api} from '../../portfolio'; 
 import 'react-toastify/dist/ReactToastify.css';
 import './ImageUpload.css';
 
@@ -45,7 +46,7 @@ const ImageUpload = () => {
     const formData = new FormData();
     formData.append('image', file);
     try {
-      const { data } = await axios.post('http://10.0.0.22:5000/predict', formData);
+      const { data } = await axios.post(api.bingusorfloppa, formData);
       const { prediction } = data;
       if (prediction === 'Floppa' || prediction === 'Bingus') {
         setResult(prediction);
